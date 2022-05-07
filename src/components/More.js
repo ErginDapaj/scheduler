@@ -1,7 +1,6 @@
 import React from "react";
-import { Link, Route } from "react-router-dom";
 
-const More = ({ match }) => (
+const More = () => (
   <div>
     <h2>More</h2>
   </div>
