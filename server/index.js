@@ -25,38 +25,38 @@ app.get("/schedule", (req, res) => {
     // shift stands for the current shift of the worker (shift 0 stands for day off) || REQUIRED
     // workDays stands for how many workdays the worker already has for example the workers get a day off once in 3 days || REQUIRED
     // daysOff stands for the days that the worker preffers off (Max 3 days not at once) || OPTIONAL
-    let workers = [
-        {
+    let workers = [{
             "workerName": "Grainger",
             "shift": 3,
             "workDays": 3,
-            "daysOff": [15,3] 
+            "daysOff": [15, 3]
         },
         {
             "workerName": "Grrrrrrr",
             "shift": 1,
             "workDays": 2,
-            "daysOff": [23,8]
+            "daysOff": [23, 8]
         },
         {
             "worker": "Idk",
             "shift": 2,
             "workDays": 1,
-            "daysOff": [6,2]
+            "daysOff": [6, 2]
         },
         {
             "worker": "Hasbulla",
             "shift": 0,
             "workDays": 0,
-            "daysOff": [18,9]
+            "daysOff": [18, 9]
         }
     ]
     workers.sort((a, b) => (a.workDays) - (b.workDays));
     console.log(workers)
     let month = thisMonth
-    for (let i = 0; i < month; i++) {
-    }
-    res.json({ message: workers });
+    for (let i = 0; i < month; i++) {}
+    res.json({
+        message: workers
+    });
 });
 
 app.listen(PORT, () => {
