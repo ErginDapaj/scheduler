@@ -52,12 +52,14 @@ app.get("/schedule", (req, res) => {
     ]
     workers.sort((a, b) => (b.workDays) - (a.workDays));
      leShift = []
-    function shifts(){
+     function shifts(){
+    for (let i = 0; i < thisMonth; i++){     
     for (let i = 0; i < 4; i++){
         workers[i].shift = i
         leShift.push(workers[i].name + "'s shift for tomorrow: " + workers[i].shift)
     }}
-    console.log(leShift)
+}
+    shifts(leShift)
     res.json({
     message: leShift
 });
