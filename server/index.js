@@ -50,11 +50,14 @@ app.get("/schedule", (req, res) => {
         "daysOff": [18]
     }
     ]
-    workers.sort((a, b) => (b.workDays) - (a.workDays));
+    console.log(workers.length)
+    workers.sort((a, b) => (a.workDays) - (b.workDays));
+    // Have to work all this out at this moment i should decide when to give a worker break based on work days
+    // After the step above i should do the same thing but with the shifts then mwalah!
      leShift = []
      function shifts(){
     for (let i = 0; i < thisMonth; i++){     
-    for (let i = 0; i < 4; i++){
+    for (let i = 0; i < workers.length; i++){
         workers[i].shift = i
         leShift.push(workers[i].name + "'s shift for tomorrow: " + workers[i].shift)
     }}
